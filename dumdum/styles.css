@@ -1,0 +1,111 @@
+/* :root {
+  --bg-light: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+  --bg-dark: #111;
+  --text-light: #111;
+  --text-dark: #eee;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+}
+
+.theme-switch button {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.portfolio {
+  padding: 2rem;
+}
+
+.portfolio h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.reel {
+  position: relative;
+  border: 3px solid transparent;
+  border-image: linear-gradient(45deg, #fbbf24, #ec4899, #6366f1) 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+  transition: 0.3s;
+}
+
+.reel:hover {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.7);
+}
+
+.reel iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+}
+
+.headphone-recommended span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+} */

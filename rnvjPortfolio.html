@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth  ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | EditByJay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel ="stylesheet" href ="mpfstyle.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">EditByJay</div>
+    <div class="top-right">
+      <div id="theme-toggle" class="mode-toggle"><b>UI mode:</b> 🌙</div>
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="tagline-container">
+      <div class="tagline">From Raw to Remarkable</div>
+      <div class="description">
+        Video Editor delivering clean, sharp, and impactful cuts — whether it's YouTube Videos, Shorts or Reels.
+      </div>
+    </div>
+    <div class="profile-pic" title="Jay"></div>
+  </section>
+
+  <section class="section">
+    <h3>💼 Tools I Specialize In</h3>
+    <div class="tools">
+      <div class="tool">DaVinci Resolve</div>
+      <div class="tool">Photoshop</div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <h2>🎩 YouTube Edits</h2>
+   <div class="video-row">
+  <iframe src="https://www.youtube.com/embed/vc1P7d-OyMA?enablejsapi=1" title="YouTube video 1" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/7J5KPQtzUHI?enablejsapi=1" title="YouTube video 2" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/RVyPrcmhxsw?enablejsapi=1" title="YouTube video 3" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/oAIKOciu5u8?enablejsapi=1" title="YouTube video 4" allowfullscreen></iframe>
+</div>
+
+
+    <h2>📱 Instagram Edits (Manager)</h2>
+    <div class="ig-row">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMel3oPRT0F/?igsh=MW9nNXo0YTFnN3Y4Ng==" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMcwWgfz1BP/?igsh=cW85NWZ5Mm96cnVk" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMcGBpxR8Ts/?igsh=b2htcGh6ZHdkbzRq" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_L32D_hbSc/?igsh=Mzk0bXQxcHR4Mnhv" data-instgrm-version="14"></blockquote>
+    </div>
+
+    <h2>Raw to Final!</h2>
+    <div class="rtw-row"></div>
+
+
+     <p><br>More edits in progress. Stay tuned!</p>
+  </section>
+
+  <footer class="py-10 text-center text-sm text-gray-500 dark:text-gray-400">
+  <h2 class="text-3xl font-semibold mb-6">📬 Contact Me</h2>
+
+  <p class="mb-4" style="margin-top: 50px !important;">📧 Email:
+📧 Email:  
+    <a href="mailto:rnvjtest2@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline">
+      rnvjtest2@gmail.com
+    </a>
+  </p>
+
+  <p class="mb-4">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;">
+    Instagram: 
+    <a href="https://www.instagram.com/laal4mirchi" target="_blank" rel="noopener" class="text-pink-600 dark:text-pink-400 hover:underline">
+      @laal4mirchi
+    </a>
+  </p>
+
+  <p class="mb-6">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;">
+    Discord: 
+    <a href="https://discord.gg/EzJ2QmPUUe" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline">
+      Join Server
+    </a>
+  </p>
+  <hr class="my-6 border-t border-gray-300 dark:border-gray-600">
+
+
+  <p>© 2025 EditByJay. Built with ❤️.</p>
+</footer>
+
+  <!-- Instagram Embed Script -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- Pause other YouTube videos on play -->
+  <script>
+    const ytIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+
+    function postToAllExcept(current, command) {
+      ytIframes.forEach((iframe) => {
+        if (iframe !== current) {
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: command,
+            args: []
+          }), '*');
+        }
+      });
+    }
+
+    window.addEventListener("message", (event) => {
+      if (typeof event.data === "string" && event.data.includes('infoDelivery')) {
+        const data = JSON.parse(event.data);
+        if (data?.info?.playerState === 1) {
+          const currentIframe = [...ytIframes].find(iframe => iframe.contentWindow === event.source);
+          postToAllExcept(currentIframe, 'pauseVideo');
+        }
+      }
+    });
+  </script>
+  <script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Set initial mode from localStorage
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light');
+    themeToggle.textContent = 'UI mode: 🌙';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    const isLight = body.classList.contains('light');
+    themeToggle.textContent = isLight ? 'UI mode: 🌙' : 'UI mode: ☀️';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
+
+</body>
+</html>
