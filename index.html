@@ -12,7 +12,7 @@
   <header>
     <div class="logo">EditByJay</div>
     <div class="top-right">
-      <div id="theme-toggle" class="mode-toggle"><b>UI mode:</b> 🌙</div>
+      <div id="theme-toggle" class="mode-toggle"><b>UI Mode:</b> 🌙</div>
 
     </div>
   </header>
@@ -63,7 +63,7 @@
   <footer class="py-10 text-center text-sm text-gray-500 dark:text-gray-400">
   <h2 class="text-3xl font-semibold mb-6">📬 Contact Me</h2>
 
-  <p class="mb-4" style="margin-top: 50px !important;">📧 Email:
+  <p class="mb-4" style="margin-top: 50px !important;">
 📧 Email:  
     <a href="mailto:rnvjtest2@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline">
       rnvjtest2@gmail.com
@@ -127,13 +127,13 @@
   // Set initial mode from localStorage
   if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light');
-    themeToggle.textContent = 'UI mode: 🌙';
+    themeToggle.textContent = 'UI Mode: 🌙';
   }
 
   themeToggle.addEventListener('click', () => {
     body.classList.toggle('light');
     const isLight = body.classList.contains('light');
-    themeToggle.textContent = isLight ? 'UI mode: 🌙' : 'UI mode: ☀️';
+    themeToggle.textContent = isLight ? 'UI Mode: 🌙' : 'UI Mode: ☀️';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 </script>
